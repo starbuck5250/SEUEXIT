@@ -1,4 +1,4 @@
-000100160518     h dftactgrp(*no) actgrp('QILE') indent(*none)
+000100160518     H dftactgrp(*no) actgrp('QILE') indent(*none)
 000200160518
 000300160518      * dbgview(*list)
 000400160518
@@ -66,12 +66,12 @@
 006600160518     D  SourceStmt                  256
 006700160518
 006800160518      * Work variables
-006900160518     D SEUInputPParm   S               *
-007000160518     D SEUOutputPParm  S               *
-007100160518     D SEUSourcePParm  S               *
-007200160518     D ThisLineP       S               *
-007300160518     D NextLineP       S               *
-007400160518     D WorkLineP       S               *
+006900160518     D SEUInputPParm   s               *
+007000160518     D SEUOutputPParm  s               *
+007100160518     D SEUSourcePParm  s               *
+007200160518     D ThisLineP       s               *
+007300160518     D NextLineP       s               *
+007400160518     D WorkLineP       s               *
 007500160518
 007600160518     D i               s             10i 0 inz
 007700160518     D CutColumns      s                   like(SourceStmt)
