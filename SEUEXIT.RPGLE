@@ -1,4 +1,4 @@
-000100160518     h dftactgrp(*no) actgrp('QILE') indent(*none)
+000100160518     H dftactgrp(*no) actgrp('QILE') indent(*none)
 000200160518
 000300160518      * dbgview(*list)
 000400160518
@@ -66,12 +66,12 @@
 006600160518     D  SourceStmt                  256
 006700160518
 006800160518      * Work variables
-006900160518     D SEUInputPParm   S               *
-007000160518     D SEUOutputPParm  S               *
-007100160518     D SEUSourcePParm  S               *
-007200160518     D ThisLineP       S               *
-007300160518     D NextLineP       S               *
-007400160518     D WorkLineP       S               *
+006900160518     D SEUInputPParm   s               *
+007000160518     D SEUOutputPParm  s               *
+007100160518     D SEUSourcePParm  s               *
+007200160518     D ThisLineP       s               *
+007300160518     D NextLineP       s               *
+007400160518     D WorkLineP       s               *
 007500160518
 007600160518     D i               s             10i 0 inz
 007700160518     D CutColumns      s                   like(SourceStmt)
@@ -243,7 +243,7 @@
 024300160518
 024400160518      * If there is data beyond the current column, split it
 024500160518      * If the rest of the line is blank, join the next line to this one
-024600160518     C                   if        %subst(ThisStmt: CurCol:
+024600160518     C                   If        %subst(ThisStmt: CurCol:
 024700160518     C                                    StmtLength - CurCol - 1) <>
 024800160518     C                                      *Blanks
 024900160518     C                   Exsr      SplitLine
@@ -391,16 +391,16 @@
 039100160518     D  ErrSResrv                     1
 039200160518     D  ErrSData                     80
 039300160518
-039400160518     C                   eval      MsgIdWrk = MsgID
-039500160518     C                   eval      MsgErrStruc = ErrStruc
+039400160518     C                   Eval      MsgIdWrk = MsgID
+039500160518     C                   Eval      MsgErrStruc = ErrStruc
 039600160518      * was message data provided?
-039700160518     c                   if        %parms >= 3
-039800160518     c                   eval      MsgData = msgDta
-039900160518     c                   eval      MsgDataLen = %len(%trimr(MsgData))
-040000160518     c                   else
-040100160518     c                   eval      MsgData = *blanks
-040200160518     c                   eval      MsgDataLen = 1
-040300160518     c                   endif
+039700160518     C                   If        %parms >= 3
+039800160518     C                   Eval      MsgData = msgDta
+039900160518     C                   Eval      MsgDataLen = %len(%trimr(MsgData))
+040000160518     C                   Else
+040100160518     C                   Eval      MsgData = *blanks
+040200160518     C                   Eval      MsgDataLen = 1
+040300160518     C                   EndIf
 040400160518
 040500160518     C                   Call      'QMHSNDPM'
 040600160518     C                   Parm                    MsgIDWrk
