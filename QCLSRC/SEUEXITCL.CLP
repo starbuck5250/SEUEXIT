@@ -5,6 +5,9 @@ pgm &tgtlib
 
 dcl &tgtlib *char 10
 
+monmsg cpf2112 /* MSGF already exists */
+monmsg cpf2412 /* MSG already exists */
+
 CRTMSGF MSGF(&tgtlib/SEUEXIT) TEXT('SEU Exit program messages') CCSID(*MSGD)
 
 ADDMSGD MSGID(SEU0001) MSGF(SEUEXIT) MSG('Cursor is not positioned within  a +
